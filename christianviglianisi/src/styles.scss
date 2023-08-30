@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4b4b4b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body{
+  margin:0 !important;
+  //font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  //font-family: 'IBM Plex Mono', monospace;
+  /* font-family: 'Poppins', sans-serif;*/
+  padding: 0 !important;
+  width: 100%!important;
+  height: 100%!important;
+  overflow-x: hidden;
+  //overflow-y: hidden;
+}
+a{
+  text-decoration: none !important;
+}
+
+html, body, app-root {
+  height: 100%;
+}
+
+@media screen and (max-width: 920px) {
+  body{
+    overflow-y: inherit;
+  }
+}
+::ng-deep html {
+  scroll-behavior: smooth !important;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+}
+
+.cta {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: #0D0D0D;
+  background: transparent;
+  border: 1px solid  #0D0D0D;
+  transition: 1s;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0);
+  padding: 10px 0;
+  width: 220px;
+  border-radius: 4px;
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #F2762E;
+}
+
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover  span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}

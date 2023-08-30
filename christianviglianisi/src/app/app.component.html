@@ -1,0 +1,29 @@
+<div class="nav-container">
+    <div class="logo-container">
+<!--        <span style="font-weight: 600; font-size: 50px; color:#4b4b4b; cursor: pointer;">-->
+        <span style="cursor: pointer;">
+<!--            <a (click)="navigateTo('/')">cv</a>-->
+            <img (click)="navigateTo('/')" id="logo" class="logo" data-aos="rotate" data-aos-anchor="#slide1c" data-aos-anchor-placement="top-center" src="././assets/images/logo.png">
+        </span>
+    </div>
+    <div #toggleButton (click)="burgerClick($event)"
+         style="height: 100%; width: 30%; display: flex; justify-content: flex-end; align-items: center; ">
+        <label for="check">
+            <input id="check" type="checkbox"/>
+            <span #burgerOne id="burgerOne"></span>
+            <span #burgerTwo id="burgerTwo"></span>
+            <span #burgerThree id="burgerThree"></span>
+        </label>
+
+    </div>
+</div>
+<div #menu *ngIf="burgerIsClicked" class="burger-container">
+    <div class="burger-submenu">
+        <div class="links-container">
+            <a (click)="navigateTo('/')" class="link">Home</a>
+            <a (click)="navigateTo('/blog')" class="link">Blog</a>
+            <a class="link" href="https://github.com/cviglianisi" target="_blank">Github</a>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

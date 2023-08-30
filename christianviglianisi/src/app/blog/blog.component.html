@@ -1,0 +1,40 @@
+<div class="blog-container">
+    <div class="blog-subcontainer">
+        <div *ngIf="blogIsActive" class="blog-box">
+            <div class="title-container">
+                <span class="title">/blog</span>
+            </div>
+            <div *ngIf="blogArticles | async as blogArticles " class="articles-container">
+                <div class="articles-box">
+                    <div *ngFor="let article of blogArticles.items"
+                         style="margin-top: 20px;">
+                        <div (click)="readArticle(article)" *ngIf="article.fields.visible" class="article">
+                            <div>{{article.fields.updatedDate | date: 'dd-MM-yyyy'}}</div>
+                            <div class="subtitle" style="margin-top: 10px;">{{article.fields.title }}</div>
+                            <div style="width: 100%; margin-top: 10px;">{{article.fields.summary | slice:0:200 }}</div>
+                            <!--<div style="width: 100%; margin-top: 10px;">{{article.fields.content.content[0].content[0].value | slice:0:200 }}</div>-->
+                            <div style="margin-top: 20px; width: 100%; height: 1px; background: #f2762e;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex-column-center footer-container" style="height: 40vh; width: 100%;">
+        <div style="height: 60%; width: 100%; "></div>
+        <div style="height: 1px; width: 60%; background: #FD6331"></div>
+        <div class="footer-subcontainer2">
+
+            <div style="color: #eae3d2;">© Christian Viglianisi 2023</div>
+            <div class="flex-row-center" style="color: #eae3d2; align-items: center; padding-top: 10px;">
+                <a href="https://instagram.com/hertzdope" style="text-decoration: none; color: white"
+                   target="_blank">IG</a>
+                &nbsp;
+                &nbsp;
+                <a href="https://linkedin.com/in/cviglianisi" style="text-decoration: none; color: white"
+                   target="_blank">LN</a>
+            </div>
+        </div>
+    </div>
+
+</div>
